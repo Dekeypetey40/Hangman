@@ -1,16 +1,17 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 # Import statements
 import random
-import art
+from art import *
 
 
 
 
 #Constants
-
+welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
+print(welcome)
 def game_rules():
     """
-    Show the user the game rules and how to play
+    Show the user the game rules, which explain how to play.
     """
     #clear_screen()
     print(
@@ -29,4 +30,5 @@ def game_rules():
         """
     )
     input("Press enter to return to main menu\n")
-game_rules()
+art_1=art("coffee")
+print(art_1)
