@@ -2,11 +2,18 @@
 # Import statements
 import random
 from art import *
+from simple_term_menu import TerminalMenu
+
+def main():
+    options = ["entry 1", "entry 2", "entry 3"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    print(f"You have selected {options[menu_entry_index]}!")
+
+if __name__ == "__main__":
+    main()
 
 
-
-
-#Constants
 welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
 print(welcome)
 def game_rules():
@@ -30,5 +37,3 @@ def game_rules():
         """
     )
     input("Press enter to return to main menu\n")
-art_1=art("coffee")
-print(art_1)
