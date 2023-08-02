@@ -18,9 +18,8 @@ def main():
     print(f"You have selected {options[menu_entry_index]}!")
     if options[menu_entry_index] == "Play Game":
         word = choose_word()
-        difficulty = choose_difficulty()
-        #play_game(word, difficulty)
-        play_game(word)
+        lives = choose_difficulty()
+        play_game(word, lives)
         
     elif options[menu_entry_index] == "Rules":
         game_rules()
@@ -32,14 +31,14 @@ def choose_difficulty():
         terminal_menu = TerminalMenu(options)
         menu_entry_index = terminal_menu.show()
         if options[menu_entry_index] == "Easy: 9 guesses":
-            difficulty = "easy"
-            return difficulty
+            lives = 9
+            return lives
         elif options[menu_entry_index] == "Medium: 7 guesses":
-            difficulty = "medium"
-            return difficulty
+            lives = 7
+            return lives
         elif options[menu_entry_index] == "Hard: 5 guesses":
-            difficulty = "hard"
-            return difficulty
+            lives = 5
+            return lives
         
 
 def choose_word():
@@ -47,10 +46,32 @@ def choose_word():
     return word
 
 
-def play_game(word):
-    for letter in word:          
+def play_game(word, lives):
+    guesses = {}
+    hidden_word = [" _ "] * len(word)
+    game_over = False
+    print(f"\n\nThe word has {len(word)} letters.")  
+    for letter in word:     
+               
         print('_ ', end=' ')
-    print(f"\n\nThe word has {len(word)} letters.")
+            
+    while not game_over and lives > 0:
+        
+        print(word)
+        guess = input(f"Guess a letter \n")
+        #code partially taken from stack overflow to replace _ with correct letter
+        
+        for i, letter in enumerate(word):
+            if letter != "_" and guess == letter:
+                print("You have guessed correctly!")
+                hidden_word[i] = letter
+                guesses.append(guess)
+                print("".join(hidden_word))
+            elif guess in 
+
+        #for letter in word:          
+            #print('_ ', end=' ')
+        #print(f"\n\nThe word has {len(word)} letters.")
     
 
 def game_rules():
