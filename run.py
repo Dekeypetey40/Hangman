@@ -3,22 +3,33 @@
 import random
 from art import *
 from simple_term_menu import TerminalMenu
+from getkey import getkey, keys
+
+
+
+
+
 
 def main():
-    options = ["entry 1", "entry 2", "entry 3"]
+    welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
+    print(welcome)
+    options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
     print(f"You have selected {options[menu_entry_index]}!")
+    if options[menu_entry_index] == "Play Game":
+        choose_difficulty()
+    elif options[menu_entry_index] == "Rules":
+        game_rules()
+        
+def choose_difficulty():
+    print("Difficulty")
+    
 
-if __name__ == "__main__":
-    main()
-
-
-welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
-print(welcome)
 def game_rules():
     """
     Show the user the game rules, which explain how to play.
+    Include a menu to return to the welcome screen or quit.
     """
     #clear_screen()
     print(
@@ -36,4 +47,17 @@ def game_rules():
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
         """
     )
-    input("Press enter to return to main menu\n")
+    options = ["Return to Main Menu", "Quit"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    if options[menu_entry_index] == "Return to Main Menu":
+        main()
+    #elif options[menu_entry_index] == "Rules":
+        #game_rules()
+main()
+
+        
+
+
+
+
