@@ -18,16 +18,40 @@ def main():
     menu_entry_index = terminal_menu.show()
     print(f"You have selected {options[menu_entry_index]}!")
     if options[menu_entry_index] == "Play Game":
-        choose_difficulty()
+        word = choose_word()
+        difficulty = choose_difficulty()
+        #play_game(word, difficulty)
+        play_game(word)
+        
     elif options[menu_entry_index] == "Rules":
         game_rules()
         
 def choose_difficulty():
-    print("Difficulty")
+    while True:
+        print("Select difficulty level")
+        options = ["Easy: 9 guesses", "Medium: 7 guesses", "Hard: 5 guesses"]
+        terminal_menu = TerminalMenu(options)
+        menu_entry_index = terminal_menu.show()
+        if options[menu_entry_index] == "Easy: 9 guesses":
+            difficulty = "easy"
+            return difficulty
+        elif options[menu_entry_index] == "Medium: 7 guesses":
+            difficulty = "medium"
+            return difficulty
+        elif options[menu_entry_index] == "Hard: 5 guesses":
+            difficulty = "hard"
+            return difficulty
+        
 
 def choose_word():
     word = (random.choice(open("words.txt","r").read().split()))
     return word
+
+
+def play_game(word):
+    for letter in word:          
+        print('_ ', end=' ')
+    print(f"\n\nThe word has {len(word)} letters.")
 
 def game_rules():
     """
@@ -55,11 +79,12 @@ def game_rules():
     menu_entry_index = terminal_menu.show()
     if options[menu_entry_index] == "Return to Main Menu":
         main()
-    #elif options[menu_entry_index] == "Rules":
+    #elif options[menu_entry_index] == "Quit":
         #game_rules()
-#main()
+main()
 
-choose_word()
+
+
 
 
 
