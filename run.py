@@ -3,7 +3,6 @@
 import random
 from art import *
 from simple_term_menu import TerminalMenu
-from getkey import getkey, keys
 
 
 
@@ -52,6 +51,7 @@ def play_game(word):
     for letter in word:          
         print('_ ', end=' ')
     print(f"\n\nThe word has {len(word)} letters.")
+    
 
 def game_rules():
     """
