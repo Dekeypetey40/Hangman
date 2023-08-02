@@ -24,7 +24,10 @@ def main():
         
 def choose_difficulty():
     print("Difficulty")
-    
+
+def choose_word():
+    word = (random.choice(open("words.txt","r").read().split()))
+    return word
 
 def game_rules():
     """
@@ -54,9 +57,9 @@ def game_rules():
         main()
     #elif options[menu_entry_index] == "Rules":
         #game_rules()
-main()
+#main()
 
-        
+choose_word()
 
 
 
