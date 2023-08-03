@@ -150,6 +150,19 @@ def play_game(word, lives):
                     letter = word[position]
                     if letter == guess:
                         hidden_word[position] = letter
+                    if "_" not in hidden_word:
+                        print("YOU WIN!")
+                        game_over = True
+        elif guess.isalpha() and len(guess) == len(word):
+            if guess in guessed_words:
+                print(f"You have already guessed {guess}, try again!")
+            elif guess != word:
+                print(f"{guess} is not the word!")
+                lives -=1
+                guessed_words.append(guess)
+            else:
+                print("YOU WIN!")
+                game_over = True
                 
                 
                 # print("You have guessed correctly!")
