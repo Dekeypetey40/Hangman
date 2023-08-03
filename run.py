@@ -145,6 +145,7 @@ def play_game(word, lives):
                 if lives == 0:
                     print(hangman_art(lives))
                     print(f"The word was {word}")
+                    restart_game()
             else:
                 #Replacing underscores with correct letters inspired by https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
                 print(f"""{guess} is in the word! Good Job!""")
