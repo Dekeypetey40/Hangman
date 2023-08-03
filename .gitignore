@@ -8,3 +8,6 @@ node_modules/
 .github/
 creds.json
 venv
+bin
+lib
+lib64
