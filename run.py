@@ -30,11 +30,11 @@ def choose_difficulty():
         options = ["Easy: 9 guesses", "Medium: 7 guesses", "Hard: 5 guesses"]
         terminal_menu = TerminalMenu(options)
         menu_entry_index = terminal_menu.show()
-        if options[menu_entry_index] == "Easy: 9 guesses":
-            lives = 9
-            return lives
-        elif options[menu_entry_index] == "Medium: 7 guesses":
+        if options[menu_entry_index] == "Easy: 7 guesses":
             lives = 7
+            return lives
+        elif options[menu_entry_index] == "Medium: 6 guesses":
+            lives = 6
             return lives
         elif options[menu_entry_index] == "Hard: 5 guesses":
             lives = 5
@@ -47,12 +47,12 @@ def choose_word():
 
 
 def play_game(word, lives):
-    guesses = {}
+    guesses = []
     hidden_word = [" _ "] * len(word)
     game_over = False
     print(f"\n\nThe word has {len(word)} letters.")  
+    
     for letter in word:     
-               
         print('_ ', end=' ')
             
     while not game_over and lives > 0:
@@ -66,12 +66,14 @@ def play_game(word, lives):
                 print("You have guessed correctly!")
                 hidden_word[i] = letter
                 guesses.append(guess)
+                print(guesses)
                 print("".join(hidden_word))
-            elif guess in 
+        if guess in guesses:
+            print(f"You have already guessed {guess}, try again!")
+        elif guess not in word:
+            lives -=1
+            print(f"{guess} is not in the word!\nYou have {lives} lives remaining.")
 
-        #for letter in word:          
-            #print('_ ', end=' ')
-        #print(f"\n\nThe word has {len(word)} letters.")
     
 
 def game_rules():
@@ -102,7 +104,10 @@ def game_rules():
         main()
     #elif options[menu_entry_index] == "Quit":
         #game_rules()
-main()
+#main()
+word = choose_word()
+lives = 7
+play_game(word, lives)
 
 
 
