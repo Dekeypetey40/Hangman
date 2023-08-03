@@ -142,6 +142,9 @@ def play_game(word, lives):
                 print(f"{guess} is not in the word")
                 lives -=1
                 guessed_letters.append(guess)
+                if lives == 0:
+                    print(hangman_art(lives))
+                    print(f"The word was {word}")
             else:
                 #Replacing underscores with correct letters inspired by https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
                 print(f"""{guess} is in the word! Good Job!""")
@@ -153,6 +156,7 @@ def play_game(word, lives):
                     if "_" not in hidden_word:
                         print("YOU WIN!")
                         game_over = True
+                        restart_game()
         elif guess.isalpha() and len(guess) == len(word):
             if guess in guessed_words:
                 print(f"You have already guessed {guess}, try again!")
@@ -160,37 +164,25 @@ def play_game(word, lives):
                 print(f"{guess} is not the word!")
                 lives -=1
                 guessed_words.append(guess)
+                if lives == 0:
+                    print(hangman_art(lives))
+                    print(f"The word was {word}")
             else:
                 print("YOU WIN!")
                 game_over = True
-                
-                
-                # print("You have guessed correctly!")
-                # guessed_letters.append(guess)
-                # hidden_list = list(hidden_word)
-                # letter_check = [i for i, letter in enumerate(word)
-                #            if letter != "_" and guess == letter]
-                # for check in letter_check:
-                #     hidden_list = [check] = guess
-                # hidden_word = "".join(hidden_list)
-                if "_" not in hidden_word:
-                    game_over = True
-            
-    #     guess = input(f"Guess a letter \n")
-    #     #code partially taken from stack overflow to replace _ with correct letter
-    #     print(hangman_art(lives))
-    #     for i, letter in enumerate(word):
-    #         if letter != "_" and guess == letter:
-    #             print("You have guessed correctly!")
-    #             hidden_word[i] = letter
-    #             guessed_letters.append(guess)
-    #             print("".join(hidden_word))
-    #     if guess in guessed_letters:
-    #         print(f"You have already guessed {guess}, try again!")
-    #     elif guess not in word:
-    #         lives -=1
-            
+                restart_game()
+        elif guess.isalpha() and len(guess) != 1 or len(word):
+            print(f"Either guess 1 letter or a word with {len(word)} characters")
 
+def restart_game():
+    print("Would you like to play again or turn off the game?")
+    options = ["Play again", "Quit"]
+    terminal_menu = TerminalMenu(options)
+    menu_entry_index = terminal_menu.show()
+    if options[menu_entry_index] == "Play again":
+            main()
+    elif options[menu_entry_index] == "Quit":
+            print("Goodbye!")
     
 def game_rules():
     """
