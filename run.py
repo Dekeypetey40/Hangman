@@ -101,9 +101,17 @@ def play_game(word, lives):
     while not game_over and lives >= 0:
         if lives == 0:
             print(hangman_art(lives))
-            print(f"The word was {word}")
+            print(f"\nThe word was {word}\n")
             restart_game()
             break
+        elif hidden_word == word or "_" not in hidden_word:
+            print(hangman_art(lives))
+            print(f"\nYOU WIN!\n")
+            print(f"The word was {word}\n")
+            restart_game()
+            break
+        else:
+            print("An unexpected error occured, please try again")
         clear()
         print(message)
         print(hangman_art(lives))
@@ -129,11 +137,6 @@ def play_game(word, lives):
                     letter = word[position]
                     if letter == guess:
                         hidden_word[position] = letter
-                    if "_" not in hidden_word:
-                        print(f"YOU WIN!\n")
-                        print(f"The word was {word}!\n")
-                        game_over = True
-                        restart_game()
         # Code if user guesses a word
         elif guess.isalpha() and len(guess) == len(word):
             if guess in guessed_words:
@@ -143,10 +146,7 @@ def play_game(word, lives):
                 lives -=1
                 guessed_words.append(guess)
             else:
-                print("YOU WIN!")
-                print(f"The word was {word}!")
-                game_over = True
-                restart_game()
+                hidden_word = guess
         # Code to catch invalid input
         elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):	
             message = f"Either guess 1 letter or a word with {len(word)} characters"	
