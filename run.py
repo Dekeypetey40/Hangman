@@ -92,7 +92,7 @@ def play_game(word, lives):
     
     for letter in word:     
         hidden_word.append("_")
-    while not game_over and lives > 0:
+    while not game_over and lives >= 0:
         if lives == 0:
             print(hangman_art(lives))
             print(f"The word was {word}")
