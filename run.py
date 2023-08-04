@@ -3,6 +3,7 @@
 import random
 from art import *
 from simple_term_menu import TerminalMenu
+import os
 
 
 #Art for hangman game taken from Crishorton https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
@@ -77,7 +78,8 @@ def hangman_art(lives):
 #return hangman_lives[-lives-1]
 
 
-
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
 
 
 
@@ -98,6 +100,7 @@ def main():
         
 def choose_difficulty():
     while True:
+        clear()
         print("Select difficulty level")
         options = ["Easy: 7 guesses", "Medium: 6 guesses", "Hard: 5 guesses"]
         terminal_menu = TerminalMenu(options)
