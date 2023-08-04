@@ -109,8 +109,8 @@ def play_game(word, lives):
         print(hangman_art(lives))
         print (*hidden_word)
         print(word)
-        print(f"\n\nThe word has {len(word)} letters.")
-        print("Letters guessed: " + ', '.join(guessed_letters))
+        print(f"\n\nThe word has {len(word)} letters.\n")
+        print("Letters guessed: " + ', '.join(guessed_letters) + f"\n")
         guess = input("Guess a letter or word:\n").lower()
         #code if user guesses a single letter
         if guess.isalpha() and len(guess) == 1:
@@ -130,8 +130,8 @@ def play_game(word, lives):
                     if letter == guess:
                         hidden_word[position] = letter
                     if "_" not in hidden_word:
-                        print("YOU WIN!")
-                        print(f"The word was {word}!")
+                        print(f"YOU WIN!\n")
+                        print(f"The word was {word}!\n")
                         game_over = True
                         restart_game()
         # Code if user guesses a word
@@ -160,7 +160,7 @@ def restart_game():
     If they want to play again they are taken back to the
     welcome menu. If they choose to quit, the program ends. 
     """
-    print("Would you like to play again or turn off the game?")
+    print("Would you like to play again or turn off the game?\n")
     options = ["Play again", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
