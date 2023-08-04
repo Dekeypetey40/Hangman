@@ -1,6 +1,10 @@
+"""
+Creates a list with hangman ascii pictures to be printed 
+to the terminal depending on the amount of guesses
+the user has left. 
+"""
 
-
-#Art for hangman game taken from Crishorton https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+# Art for hangman game taken from Crishorton https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
 HANGMANPICS = ['''
   +---+
       |
