@@ -4,9 +4,11 @@ import random
 from art import *
 from simple_term_menu import TerminalMenu
 import os
+from hangman_ascii import hangman_art
 
 
-#Art for hangman game taken from Crishorton https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+# Art for hangman game taken from Crishorton 
+# https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
 HANGMANPICS = ['''
   +---+
       |
@@ -73,7 +75,7 @@ HANGMANPICS = ['''
 =========
 YOU LOST!''']
 def hangman_art(lives):
-  return (HANGMANPICS[-lives-1])
+    return (HANGMANPICS[-lives-1])
 
 
 
@@ -82,8 +84,7 @@ def clear():
     """
     This clears the terminal to prevent clutter on it.
     """
-    os.system('cls' if os.name=='nt' else 'clear')
-
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def main():
@@ -91,7 +92,8 @@ def main():
     This handles the welcome menu and calls the functions
     to play the game and look at the rules
     """
-    welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
+    clear()
+    welcome=text2art("Welcome\n To\n Hangman", font='doom', chr_ignore=True)
     print(welcome)
     options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
@@ -104,7 +106,8 @@ def main():
         
     elif options[menu_entry_index] == "Rules":
         game_rules()
-        
+
+
 def choose_difficulty():
     """
     Gives the user a menu to select the difficulty level.
@@ -126,7 +129,9 @@ def choose_difficulty():
         elif options[menu_entry_index] == "Hard: 5 guesses":
             lives = 5
             return lives
-        
+        else:
+            print("Unknown error occured, please try again")
+
 
 def choose_word():
     """
@@ -153,11 +158,18 @@ def play_game(word, lives):
     guessed_words = []
     hidden_word = []
     game_over = False
+    message = ""
     
-      
     for letter in word:     
         hidden_word.append("_")
     while not game_over and lives > 0:
+        if lives == 0:
+            print(hangman_art(lives))
+            print(f"The word was {word}")
+            restart_game()
+            break
+        clear()
+        print(message)
         print(hangman_art(lives))
         print (*hidden_word)
         print(word)
@@ -167,18 +179,14 @@ def play_game(word, lives):
         #code if user guesses a single letter
         if guess.isalpha() and len(guess) == 1:
             if guess in guessed_letters:
-                print(f"You have already guessed {guess}, try again!")
+                message = f"You have already guessed {guess}, try again!"
             elif guess not in word:
-                print(f"{guess} is not in the word")
+                message = f"{guess} is not in the word"
                 lives -=1
                 guessed_letters.append(guess)
-                if lives == 0:
-                    print(hangman_art(lives))
-                    print(f"The word was {word}")
-                    restart_game()
             else:
                 #Replacing underscores with correct letters inspired by https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
-                print(f"""{guess} is in the word! Good Job!""")
+                message = f"""{guess} is in the word! Good Job!"""
                 guessed_letters.append(guess)
                 for position in range (len(word)):
                     letter = word[position]
@@ -186,24 +194,26 @@ def play_game(word, lives):
                         hidden_word[position] = letter
                     if "_" not in hidden_word:
                         print("YOU WIN!")
+                        print(f"The word was {word}!")
                         game_over = True
                         restart_game()
         elif guess.isalpha() and len(guess) == len(word):
             if guess in guessed_words:
-                print(f"You have already guessed {guess}, try again!")
+                message = f"You have already guessed {guess}, try again!"
             elif guess != word:
                 print(f"{guess} is not the word!")
                 lives -=1
                 guessed_words.append(guess)
-                if lives == 0:
-                    print(hangman_art(lives))
-                    print(f"The word was {word}")
             else:
                 print("YOU WIN!")
+                print(f"The word was {word}!")
                 game_over = True
                 restart_game()
-        elif guess.isalpha() and len(guess) != 1 or len(word):
-            print(f"Either guess 1 letter or a word with {len(word)} characters")
+        elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):	
+            error = f"Either guess 1 letter or a word with {len(word)} characters"	
+        else:	
+            error = "Invalid input, try again!"
+
 
 def restart_game():
     """
@@ -219,7 +229,8 @@ def restart_game():
             main()
     elif options[menu_entry_index] == "Quit":
             print("Goodbye!")
-    
+
+
 def game_rules():
     """
     Show the user the game rules, which explain how to play.
@@ -246,8 +257,11 @@ def game_rules():
     menu_entry_index = terminal_menu.show()
     if options[menu_entry_index] == "Return to Main Menu":
         main()
-    #elif options[menu_entry_index] == "Quit":
-        #game_rules()
+    elif options[menu_entry_index] == "Quit":
+        print("Goodbye!")
+    else:
+        print("Invalid input, try again!")
+        game_rules()
 main()
 
 
