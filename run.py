@@ -27,6 +27,8 @@ def main():
     options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
+    if menu_entry_index is None:
+        main()
     if options[menu_entry_index] == "Play Game":
         word = choose_word()
         lives = choose_difficulty()
@@ -34,8 +36,10 @@ def main():
         
     elif options[menu_entry_index] == "Rules":
         game_rules()
-    elif options[menu_entry_index] == None:
-        main()
+    elif options[menu_entry_index] == "Quit":
+        print("Goodbye!")
+        exit()  # using python's built in exit() function to quit the program
+
 
 
 def choose_difficulty():
@@ -50,6 +54,8 @@ def choose_difficulty():
         options = ["Easy: 7 guesses", "Medium: 6 guesses", "Hard: 5 guesses"]
         terminal_menu = TerminalMenu(options)
         menu_entry_index = terminal_menu.show()
+        if menu_entry_index is None:
+            choose_difficulty()
         if options[menu_entry_index] == "Easy: 7 guesses":
             lives = 7
             return lives
@@ -140,9 +146,9 @@ def play_game(word, lives):
                 game_over = True
                 restart_game()
         elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):	
-            error = f"Either guess 1 letter or a word with {len(word)} characters"	
+            message = f"Either guess 1 letter or a word with {len(word)} characters"	
         else:	
-            error = "Invalid input, try again!"
+            message = "Invalid input, try again!"
 
 
 def restart_game():
@@ -155,10 +161,14 @@ def restart_game():
     options = ["Play again", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
+    if menu_entry_index is None:
+        restart_game()
     if options[menu_entry_index] == "Play again":
             main()
     elif options[menu_entry_index] == "Quit":
             print("Goodbye!")
+    else:
+        print("An error occured, please try again.")
 
 
 def game_rules():
@@ -185,14 +195,14 @@ def game_rules():
     options = ["Return to Main Menu", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
-    if options[menu_entry_index] == "Return to Main Menu":
-        if TypeError:
-            print("Invalid input, please try again!")
-        else:
-            print("Invalid input, please try again!")
-        main()
-    elif options[menu_entry_index] == "Quit":
+    if menu_entry_index is None:
+        game_rules()
+    if options[menu_entry_index] == "Quit":
         print("Goodbye!")
+    elif options[menu_entry_index] == "Return to Main Menu":
+        main()
+    else:
+        print("An unexpected error occured, please try again.")
     
 main()
 
