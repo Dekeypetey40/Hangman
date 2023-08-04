@@ -75,15 +75,22 @@ YOU LOST!''']
 def hangman_art(lives):
   return (HANGMANPICS[-lives-1])
 
-#return hangman_lives[-lives-1]
 
 
+#code taken from https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
 def clear():
+    """
+    This clears the terminal to prevent clutter on it.
+    """
     os.system('cls' if os.name=='nt' else 'clear')
 
 
 
 def main():
+    """
+    This handles the welcome menu and calls the functions
+    to play the game and look at the rules
+    """
     welcome=text2art("Welcome\n To\n Hangman",font='doom',chr_ignore=True)
     print(welcome)
     options = ["Play Game", "Rules", "Quit"]
@@ -99,6 +106,11 @@ def main():
         game_rules()
         
 def choose_difficulty():
+    """
+    Gives the user a menu to select the difficulty level.
+    Depending on the level selected the user is assigned 
+    a certain amount of lives
+    """
     while True:
         clear()
         print("Select difficulty level")
@@ -117,11 +129,26 @@ def choose_difficulty():
         
 
 def choose_word():
+    """
+    Reads the words.txt file and randomly selects a word from the list
+    and returns it for the play_game function to use.
+    """
     word = (random.choice(open("words.txt","r").read().split()))
     return word
 
 
 def play_game(word, lives):
+    """
+    Main function to play the hangman game.
+    Tells the user how many letters are in the randomly
+    chosen word and prompts them to guess.
+    If the user inputs a letter already guessed, they
+    are prompted to choose a different letter. If the user
+    is correct, it replaces underscore(s) with the letter.
+    If they are incorrect, the player loses a guess and the hangman
+    picture is updated. Waits for player to win or lose to ask
+    the player if they want to play again.
+    """
     guessed_letters = []
     guessed_words = []
     hidden_word = []
@@ -179,6 +206,11 @@ def play_game(word, lives):
             print(f"Either guess 1 letter or a word with {len(word)} characters")
 
 def restart_game():
+    """
+    Asks the player if they want to play again or quit. 
+    If they want to play again they are taken back to the
+    welcome menu. If they choose to quit, the program ends. 
+    """
     print("Would you like to play again or turn off the game?")
     options = ["Play again", "Quit"]
     terminal_menu = TerminalMenu(options)
@@ -193,7 +225,7 @@ def game_rules():
     Show the user the game rules, which explain how to play.
     Include a menu to return to the welcome screen or quit.
     """
-    #clear_screen()
+    clear()
     print(
         f"""
    +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
