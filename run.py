@@ -121,7 +121,8 @@ def play_game(word, lives):
                 lives -=1
                 guessed_letters.append(guess)
             else:
-                #Replacing underscores with correct letters inspired by https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
+                # Replacing underscores with correct letters inspired by 
+                # https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
                 message = f"""{guess} is in the word! Good Job!"""
                 guessed_letters.append(guess)
                 for position in range (len(word)):
@@ -133,6 +134,7 @@ def play_game(word, lives):
                         print(f"The word was {word}!")
                         game_over = True
                         restart_game()
+        # Code if user guesses a word
         elif guess.isalpha() and len(guess) == len(word):
             if guess in guessed_words:
                 message = f"You have already guessed {guess}, try again!"
@@ -145,6 +147,7 @@ def play_game(word, lives):
                 print(f"The word was {word}!")
                 game_over = True
                 restart_game()
+        # Code to catch invalid input
         elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):	
             message = f"Either guess 1 letter or a word with {len(word)} characters"	
         else:	
