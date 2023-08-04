@@ -7,79 +7,8 @@ import os
 from hangman_ascii import hangman_art
 
 
-# Art for hangman game taken from Crishorton 
-# https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
-HANGMANPICS = ['''
-  +---+
-      |
-      |
-      |
-      |
-      |
-=========
-7 GUESSES LEFT''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-6 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-5 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-4 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========
-3 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-2 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-1 GUESSES LEFT''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-YOU LOST!''']
-def hangman_art(lives):
-    return (HANGMANPICS[-lives-1])
-
-
-
-#code taken from https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
+# code taken from 
+# https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
 def clear():
     """
     This clears the terminal to prevent clutter on it.
@@ -98,7 +27,6 @@ def main():
     options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
-    print(f"You have selected {options[menu_entry_index]}!")
     if options[menu_entry_index] == "Play Game":
         word = choose_word()
         lives = choose_difficulty()
@@ -106,6 +34,8 @@ def main():
         
     elif options[menu_entry_index] == "Rules":
         game_rules()
+    elif options[menu_entry_index] == None:
+        main()
 
 
 def choose_difficulty():
@@ -256,12 +186,14 @@ def game_rules():
     terminal_menu = TerminalMenu(options)
     menu_entry_index = terminal_menu.show()
     if options[menu_entry_index] == "Return to Main Menu":
+        if TypeError:
+            print("Invalid input, please try again!")
+        else:
+            print("Invalid input, please try again!")
         main()
     elif options[menu_entry_index] == "Quit":
         print("Goodbye!")
-    else:
-        print("Invalid input, try again!")
-        game_rules()
+    
 main()
 
 
