@@ -100,11 +100,13 @@ def play_game(word, lives):
         hidden_word.append("_")
     while not game_over and lives >= 0:
         if lives == 0:
+            clear()
             print(hangman_art(lives))
             print(f"\nThe word was {word}\n")
             restart_game()
             break
         elif hidden_word == word or "_" not in hidden_word:
+            clear()
             print(hangman_art(lives))
             print(f"\nYOU WIN!\n")
             print(f"The word was {word}\n")
