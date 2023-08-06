@@ -109,7 +109,10 @@ A flow chart were used in the beggining stages of the design phase.
 
 ## Validator testing
 
-* Lighthouse in Chrome Developer Tools was used. .
+* Code Institutes [python linter](http://pep8ci.herokuapp.com/) was used to validate the code:
+    - Some trailing and missing whitespaces were addressed, but there were no major issues. 
+![CI Python Linter](assets/images/ci-py-linter-hangman.png)
+* Lighthouse in Chrome Developer Tools was used.
 ![Lighthouse](assets/images/lighthouse-hangman.png)
 
 
