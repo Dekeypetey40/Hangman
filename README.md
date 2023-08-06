@@ -181,23 +181,17 @@ A flow chart were used in the beggining stages of the design phase.
 ---
 # Credits
 
+## Python Libraries
+ - [Art](https://pypi.org/project/art/) was used to make ASCII art.
+ - [Simple Terminal Menu](https://pypi.org/project/simple-term-menu/) was used to make menus for the user. 
+ - OS was used for the clear screen function. 
 
 ## Content
 - A huge thank you to my mentor Aleksei Konovalov for all of his help throughout this process.
-- Inspiration for my button design was taken from Code Institute's Love Maths project and was adapted to suit my website.
-- The method of functions returning a value as an array was taken from [scaler.com](https://www.scaler.com/topics/javascript-return-multiple-values/).
-- The code for the reset button was taken from [Stack Overflow](https://stackoverflow.com/).
+- The hangman wordbank was taken from [Xethron](https://github.com/Xethron/Hangman/blob/master/words.txt)
+- Art for hangman game taken from [Crishorton](https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c)
+- Code for clear function was taken from Stackoverflow
+- The method of replacing underscores with letters was inspired by [Mikha Harly](https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly)
 
 ---
 
-## Media
-  - Icon for my website was taken from [Flaticon](https://www.flaticon.com/)
-  - Font Awesome was used for the logo header and the element buttons. 
-
-Creds
-Libraries
-art 6.0 for ASCII art library https://pypi.org/project/art/
-https://blessed.readthedocs.io/en/latest/ to color stuff
-Simple Terminal Menu https://pypi.org/project/simple-term-menu/
-Wordbank taken from https://github.com/Xethron/Hangman/blob/master/words.txt
-The method to replace underscores with letters and print it out inspired by https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
