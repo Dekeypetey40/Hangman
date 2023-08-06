@@ -14,6 +14,8 @@ This website runs a hangman game created by myself, Kai Michael-Mikhail. The dep
 - [Python](https://www.python.org/) was the programming language used to create this project.
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
 - [Balsamic](https://balsamiq.com/) was used to make wireframes in the design process.
+- [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier2_mixed_search_brand_exact_&km_CPC_CampaignId=1520850463&km_CPC_AdGroupID=57697288545&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433237648&km_CPC_TargetID=kwd-33511936169&km_CPC_Country=21003&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjwib2mBhDWARIsAPZUn_kdBdBp4hO9ekx4AOZmGOKCcV9pyDfxUgekVe6bTHnD47n6XJfwfg8aAoC_EALw_wcB) was used to plan the flow of my app. 
+
 
 ---
 
@@ -28,48 +30,26 @@ This website runs a hangman game created by myself, Kai Michael-Mikhail. The dep
 ---
 
 # Design 
-The Element Duel website is designed as a single page site. The page is designed so that minimal scrolling is required. The entirety of the main heading and rules section should fit onto the screen and so should the game area. This is so that one can either read the rules or play the game without having to scroll. This holds true on different devices as well. 
+Hangman is designed to fit onto the terminal screen. A clear screen function was made to make sure the terminal does not get too cluttered. 
 
-The colour scheme of the site is designed with two shades of blue, which evoke a feeling of calmness. The purpose of this is so that users can relax and enjoy playing the game.
 
 ## Planning
 
-### Wireframes
+### Flow Chart
 
-Wireframes were used in the beggining stages of the design phase. 
-![Element Duel Wireframe](assets/images/wireframe-ed.png) 
-
-- The rules section was expanded upon as I decided the text in the wireframe was insufficient to explain the rules properly.
+A flow chart were used in the beggining stages of the design phase. 
+![Hangman Flow Chart](assets/images/hangman-flow-chart.png) 
 
 ---
 
-### Function and variable planning
-
-![Function planning image](assets/images/function-path.png)
-- In the planning stages a map of how the user interacts the site was created.
-  - It lists the order of events.
-  - It lists the functions I predicted I would need.
-  - It lists the variables I predicted I would need. 
-- In the development process I added a function for the computer to pick an element.
-- The displayResult function ended up being spread out between the other functions. 
-- Many variables were added so that I could manipulate the text on the DOM and have interactive buttons. 
-
----
 
 # Features
 
-## Main Page 
+## Welcome
 
 ![Full Home Page](assets/images/ed-full-page.png)
-![Full page mobile](assets/images/ed-full-mobile.png)
+)
 
-### Logo header and rules section
-
-![Full rules image](assets/images/ed-big-rules.png)
-- The rules are written concisely, so that the user can quickly and easily understand how the game works.
-
-![Mobile rules image](assets/images/ed-rules-mobile.png)
-- On a mobile screen, the rules go from 2 to 1 column to make them easier to read while still fitting onto the screen without scrolling.
 
 ---
 
