@@ -210,11 +210,3 @@ def game_rules():
         print("An unexpected error occured, please try again.")
     
 main()
-
-
-
-
-
-
-
-
