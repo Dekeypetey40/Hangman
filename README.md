@@ -13,7 +13,6 @@ This website runs a hangman game created by myself, Kai Michael-Mikhail. The dep
 ## Technologies used
 - [Python](https://www.python.org/) was the programming language used to create this project.
 - [VScode](https://code.visualstudio.com/) was the editor used to write my code.
-- [Balsamic](https://balsamiq.com/) was used to make wireframes in the design process.
 - [Lucidchart](https://www.lucidchart.com/pages/landing?utm_source=google&utm_medium=cpc&utm_campaign=_chart_en_tier2_mixed_search_brand_exact_&km_CPC_CampaignId=1520850463&km_CPC_AdGroupID=57697288545&km_CPC_Keyword=lucidchart&km_CPC_MatchType=e&km_CPC_ExtensionID=&km_CPC_Network=g&km_CPC_AdPosition=&km_CPC_Creative=442433237648&km_CPC_TargetID=kwd-33511936169&km_CPC_Country=21003&km_CPC_Device=c&km_CPC_placement=&km_CPC_target=&gclid=Cj0KCQjwib2mBhDWARIsAPZUn_kdBdBp4hO9ekx4AOZmGOKCcV9pyDfxUgekVe6bTHnD47n6XJfwfg8aAoC_EALw_wcB) was used to plan the flow of my app. 
 
 
@@ -79,7 +78,7 @@ A flow chart were used in the beggining stages of the design phase.
 ![Four lives](assets/images/four-lives.png) 
 ![Three lives](assets/images/three-lives.png) 
 ![Two lives](assets/images/two-lives.png) 
-![One lives](assets/images/one-lives.png) 
+![One lives](assets/images/one-life.png.png) 
 ![You lose](assets/images/you-lost.png) 
 ![You win](assets/images/you-win.png) 
 - The user is shown how many lives they had left (if any) and is told what the word was.
