@@ -6,7 +6,7 @@
 ---
 # Introduction
 
-[Hangman](https://github.com/Dekeypetey40/Hangman) is a website where one can play Hangman, a classic game.
+[Hangman](https://github.com/Dekeypetey40/Hangman) is a website where one can play Hangman, a classic game. The game is deployed via Heroku and one can play it [here](https://kais-hangman-project-97f7e4a4339d.herokuapp.com/). 
 
 This website runs a hangman game created by myself, Kai Michael-Mikhail. The deployed project provides an interactive experience where the user can play against the computer as much or as little as they wish. This was made as my third project as part of Code Institue's Full Stack Developer course.
 
@@ -45,54 +45,66 @@ A flow chart were used in the beggining stages of the design phase.
 
 # Features
 
-## Welcome
+## Welcome Page
 
-![Full Home Page](assets/images/ed-full-page.png)
-)
+![Full Home Page](assets/images/welcome-hangman.png)
 
-
----
-
-### Game Area
-
-![Full game area image](assets/images/game-area-big.png)
-- The game area is the interactive section of the website.  
-- Once the player clicks the begin duel button messages pop up to explain to the user how to proceed. 
-- In the results section of the game area the result of each function is shown to the user so that they understand how they go their result.
-![Image after duel has begun](assets/images/choose-element-ed.png)
-- This indicates to the user that they must now select an element.
-- The element buttons are interactive. Once a button is hovered over they get a background colour.
-![Fire button](assets/images/fire-button.png)
-![Water button](assets/images/water-button.png)
-![Nature button](assets/images/nature-button.png)
-- When the user clicks on an element button the next promt appears.
-![Image after element choice](assets/images/element-choice-made.png)
-- The user is promted to roll the dice and their chosen element appears in the results area.
-![Final result image](assets/images/final-result.png)
-- The final result is shown to the user.
-- The Wins and Losses section at the bottom of the game area keeps track of how many times the player wins or loses. 
+- At the bottom of the terminal the user has a menu to interact with. The user navigates it with the arrow keys and presses enter to select their option. 
 
 ---
 
-### Footer
-![Footer image](assets/images/ed-footer.png) 
-- The footer simply indicates the purpose of the website and provides a link to the authors GitHub repositories. 
+## Rules
+
+![Rules Page](assets/images/rules-hangman.png)
+
+- The rules page simply explains how the game works. At the bottom of the terminal the user, again, has a menu to interact with. They may select to return to the welcome page or quit the game. 
+
+---
+
+## Select Difficulty
+![Difficulty Level](assets/images/difficulty-hangman.png) 
+
+- The user is prompted to select their difficulty level from an interactive menu.
+
+---
+
+## Guess the word
+- The user is prompted to guess a letter or word and is told how long the word is. 
+- The most guesses a user gets is 7. 
+- The hangman gets more and more filled out the closer to losing the user is. 
+- The letters and words guessed is added to a list and printed out for the user.
+![Seven lives](assets/images/seven-lives.png) 
+![Six lives](assets/images/six-lives.png) 
+![Five lives](assets/images/five-lives.png) 
+![Four lives](assets/images/four-lives.png) 
+![Three lives](assets/images/three-lives.png) 
+![Two lives](assets/images/two-lives.png) 
+![One lives](assets/images/one-lives.png) 
+![You lose](assets/images/you-lost.png) 
+![You win](assets/images/you-win.png) 
+
+- When the user writes invalid input, they are given are warning message indicating where they went wrong. 
+![Guessed letter](assets/images/already-guessed.png)
+![Guessed word](assets/images/guessed-word.png)
+![Invalid length](assets/images/bad-length.png)
+![Invalid input](assets/images/bad-input.png)
+
+
 
 ---
 
 # Future Features
-  - An animation of dice being rolled.
+  - A leaderboard with scores
   - A player vs player game mode.
-  - Adding a best of 5 rounds feature. 
+  - Changing amount of guesses to be determined by the length of the word. 
 
 ---
 
 # Testing
-  - I tested the game countless times using all elements to make sure it functioned as it should
-    - When I ran into problems I used console logs to see what the functions were returning. 
-  - I tested to make sure the website works in the following browsers: Firefox, Chrome and Edge. 
-  - I used Chrome's devtools and [Multi Device Mockup Generator](https://techsini.com/multi-mockup/index.php) to check that the stylings respond and everything functions on all screen sizes. 
-  - I tested every button and link to confirm that they work and lead where they are supposed to. 
+ - I tested the game countless times using all elements to make sure it functioned as it should
+ - When I ran into problems I used printed variables to see what the functions were returning.   
+ - I tested every button to confirm that they work.
+ - I gave all sorts of input into the game to try and break it, to make sure unexpected errors did not occur.   
 
 
 ## Validator testing
