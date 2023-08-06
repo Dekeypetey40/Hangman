@@ -137,29 +137,23 @@ A flow chart were used in the beggining stages of the design phase.
 
 | feature | action | expected result | tested | passed | comments |
 | --- | --- | --- | --- | --- | --- |
-| Element choice Area | | | | | |
-| Element Header | Click the Begin Duel button | InnerText changes from "your fate is yet to be decided" to "choose your element" | Yes | Yes |  |
-| Element Header | Click the Roll Dice button | InnerText changes from "choose your element" to one of two options "x element is super effective against y element" or "equal elements" | Yes | Yes |  |
-| Fire element button | Click the button | fire becomes the players chosen element, cpuChoice is run, the roll dice button appears and the element header says "Your choice has been made". | Yes | Yes | If user doesn't choose an element the roll dice button does not appear. |
-| Water element button | Click the button | water becomes the players chosen element, cpuChoice is run, the roll dice button appears and the element header says "Your choice has been made". | Yes | Yes | If user doesn't choose an element the roll dice button does not appear. |
-| Nature element button | Click the button | nature becomes the players chosen element, cpuChoice is run, the roll dice button appears and the element header says "Your choice has been made".  | Yes | Yes | If user doesn't choose an element the roll dice button does not appear. |
-| Results area | | | | | |
-| Player Side | | | | | |
-| Your element | Click on an element button  | Your chosen element appears beside "Your element:"  | yes | yes | |
-| You rolled | Click on the roll dice button  | Your random number before bonuses appears beside "You rolled:" | yes | yes | |
-| Your bonus | Click on the roll dice button  | A "+5" or "0" appears beside "Your bonus:" depending on if you picked an advantageous element or not | yes | yes | |
-| Your final score | Click on the roll dice button  | Your final score after bonuses appears beside "Your final score:" | yes | yes | |
-| Opponent Side | | | | |All of these were tested in the same way and have the same expected results except for Opponent Element |
-| Opponent Element | Click on an element button and then roll dice  | First cpuChoice is run and a "?" appears beside Opponent element: and then the opponenets element is revealed | yes | yes | |
-| Other button area | | | | | |
-| Begin Duel | Click the button | You are prompted to choose an element, the button disappears and the reset button appears | Yes | Yes | If you do not click this button you may not select an element  |
-| Reset | Click the button | The page reloads | Yes | Yes |  |
-| Roll Dice | Click the button | The results of the game are determined and appear in the correct places. | Yes | Yes |  |
-| Score Area | | | | | |
-| Wins| Test the game until the player wins | 1 is added to the player's wins tally | Yes | Yes | |
-| Losses| Test the game until the computer wins | 1 is added to the player's losses tally | Yes | Yes | |
-| Footer | | | | | |
-| My GitHub link | Click on the link | The link opens up my GitHub repositories in a separate tab | Yes | Yes | |
+| Welcome Screen Menu | | | | | |
+| Play Game Option | Select Play Game | The play_game function runs | Yes | Yes |  |
+| Rules Option | Select Rules | The rules function runs | Yes | Yes |  |
+| Quit Option | Select quit | The program turns off. | Yes | Yes |  |
+| Rules Menu | | | | | |
+| Return to Main Menu | Select return to main menu | The user is taken back to the welcome screen. | Yes | Yes |  |
+| Quit Option | Select quit | The program turns off. | Yes | Yes |  |
+| Select Difficulty | | | | | |
+| Easy Option | Select easy | The program runs the play game function and assigns the user 7 lives. | Yes | Yes |  |
+| Medium Option | Select medium | The program runs the play game function and assigns the user 6 lives. | Yes | Yes |  |
+| Hard Option | Select hard | The program runs the play game function and assigns the user 5 lives. | Yes | Yes |  |
+| Guess the word | | | | | |
+| Input: single letter | Write a single letter, and then test an invalid character | If a single letter is inputted it is added to a list and printed for the user. If it was correct its position in the word is shown to the user, if incorrect the hangman picture updates. If an invalid character is chosen, an error message appears and tells the user to try again. | Yes | Yes |  |
+| Input: word | Write a word with same length as the answer, and then test invalid characters | If a word of same length is inputted it is added to a list and printed for the user. If it was correct the user is informed they have won, if incorrect the hangman picture updates. If an invalid character is chosen, an error message appears and tells the user to try again. | Yes | Yes |  |
+| Restart Game | | | | | |
+| Play Again Option| Select the play again option | The player is taken back to the welcome screen | Yes | Yes | |
+| Quit Option | Select quit | The program turns off. | Yes | Yes |  |
 
 ---
 
