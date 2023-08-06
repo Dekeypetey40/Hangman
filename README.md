@@ -79,11 +79,10 @@ A flow chart were used in the beggining stages of the design phase.
 ![Three lives](assets/images/three-lives.png) 
 ![Two lives](assets/images/two-lives.png) 
 ![One lives](assets/images/one-life.png.png) 
-![You lose](assets/images/you-lost.png) 
-![You win](assets/images/you-win.png) 
 - The user is shown how many lives they had left (if any) and is told what the word was.
 - The user is given a menu where they can choose to quit or play again.
-
+![You lose](assets/images/you-lost.png) 
+![You win](assets/images/you-win.png) 
 - When the user writes invalid input, they are given are warning message indicating where they went wrong. 
 ![Guessed letter](assets/images/already-guessed.png)
 ![Guessed word](assets/images/guessed-word.png)
