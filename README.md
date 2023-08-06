@@ -121,8 +121,13 @@ A flow chart were used in the beggining stages of the design phase.
 ## Bugs
 
 ## Solved bugs
-  - My compare elements function did not work as it should and was not adding 5 to the player who had an advantageous element. This was largely due to the fact that I had called two different functions twice. Once this was fixed the game worked as it should. 
-  - When I reformatted my HTML file to be easier to read and then tried to adapt my js file to it the game ceased to function as it should. I undid all my changes and redid the process, checking everything was working with each change I made. This process resulted with the desired effect. 
+  - I was getting an error when I to keep track of the user guesses. This was solved by realizing I had made an error, which was that I made an empty dictionary instead of list to store the guesses. 
+
+  - My code was not picking up non-alphabetical input from the user. The problem was that I had not set up an else statement to catch such input. When I did not it worked properly.
+  - The app would stop running when the user ran out of guesses. 
+    - The first part of the solution was to have the while loop run while the user's lives >= 0 not just >0.
+    - The second part of the solution was to add a break point after the restart game function was called. If not the code would continuously ask the user to guess letters, based on the game that was already over. 
+
 
 ---
 
