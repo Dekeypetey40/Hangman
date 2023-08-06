@@ -22,7 +22,7 @@ def main():
     to play the game and look at the rules
     """
     clear()
-    welcome=text2art("Welcome\n To\n Hangman", font='doom', chr_ignore=True)
+    welcome=text2art("Welcome To\n Hangman", font='doom', chr_ignore=True)
     print(welcome)
     options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
@@ -118,7 +118,6 @@ def play_game(word, lives):
         print(message)
         print(hangman_art(lives))
         print (*hidden_word)
-        print(word)
         print(f"\n\nThe word has {len(word)} letters.\n")
         print("Letters guessed: " + ', '.join(guessed_letters) + f"\n")
         guess = input("Guess a letter or word:\n").lower()
