@@ -120,6 +120,7 @@ def play_game(word, lives):
         print (*hidden_word)
         print(f"\n\nThe word has {len(word)} letters.\n")
         print("Letters guessed: " + ', '.join(guessed_letters) + f"\n")
+        print("Words guessed: " + ', '.join(guessed_words) + f"\n")
         guess = input("Guess a letter or word:\n").lower()
         #code if user guesses a single letter
         if guess.isalpha() and len(guess) == 1:
