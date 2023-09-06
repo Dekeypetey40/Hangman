@@ -1,10 +1,12 @@
 """
-Creates a list with hangman ascii pictures to be printed 
+Creates a list with hangman ascii pictures to be printed
 to the terminal depending on the amount of guesses
-the user has left. 
+the user has left.
 """
 
-# Art for hangman game taken from Crishorton https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+# Art for hangman game taken from Crishorton
+# https://gist.github.com/chrishorton/8510732aa9a80a03c829b09f12e20d9c
+
 HANGMANPICS = ['''
   +---+
       |
@@ -70,7 +72,7 @@ HANGMANPICS = ['''
       |
 =========
 YOU LOST!''']
-def hangman_art(lives):
-  return (HANGMANPICS[-lives-1])
 
-#return hangman_lives[-lives-1]
+
+def hangman_art(lives):
+    return (HANGMANPICS[-lives-1])
