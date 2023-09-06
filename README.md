@@ -110,7 +110,10 @@ A flow chart were used in the beggining stages of the design phase.
 
 * Code Institutes [python linter](http://pep8ci.herokuapp.com/) was used to validate the code:
     - Some trailing and missing whitespaces were addressed, but there were no major issues. 
-![CI Python Linter](assets/images/ci-py-linter-hangman.png)
+    - Somehow my fixes were not reflected in my last commit so the code was fixed an additional time to pass PEP8 standards.
+    - Fixes were also made for the ASCII art python file.
+![CI Python Linter](assets/images/run-linter-2.png)
+![CI Python Linter](assets/images/ascii-linter-2.png)
 * Lighthouse in Chrome Developer Tools was used.
 ![Lighthouse](assets/images/lighthouse-hangman.png)
 
