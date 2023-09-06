@@ -7,7 +7,7 @@ import os
 from hangman_ascii import hangman_art
 
 
-# code taken from 
+# code taken from
 # https://stackoverflow.com/questions/517970/how-to-clear-the-interpreter-console
 def clear():
     """
@@ -22,7 +22,7 @@ def main():
     to play the game and look at the rules
     """
     clear()
-    welcome=text2art("Welcome To\n Hangman", font='doom', chr_ignore=True)
+    welcome = text2art("Welcome To\n Hangman", font='doom', chr_ignore=True)
     print(welcome)
     options = ["Play Game", "Rules", "Quit"]
     terminal_menu = TerminalMenu(options)
@@ -33,7 +33,7 @@ def main():
         word = choose_word()
         lives = choose_difficulty()
         play_game(word, lives)
-        
+
     elif options[menu_entry_index] == "Rules":
         game_rules()
     elif options[menu_entry_index] == "Quit":
@@ -41,11 +41,10 @@ def main():
         exit()  # using python's built in exit() function to quit the program
 
 
-
 def choose_difficulty():
     """
     Gives the user a menu to select the difficulty level.
-    Depending on the level selected the user is assigned 
+    Depending on the level selected the user is assigned
     a certain amount of lives
     """
     while True:
@@ -74,7 +73,7 @@ def choose_word():
     Reads the words.txt file and randomly selects a word from the list
     and returns it for the play_game function to use.
     """
-    word = (random.choice(open("words.txt","r").read().split()))
+    word = (random.choice(open("words.txt", "r").read().split()))
     return word
 
 
@@ -95,8 +94,8 @@ def play_game(word, lives):
     hidden_word = []
     game_over = False
     message = ""
-    
-    for letter in word:     
+
+    for letter in word:
         hidden_word.append("_")
     while not game_over and lives >= 0:
         if lives == 0:
@@ -117,25 +116,25 @@ def play_game(word, lives):
         clear()
         print(message)
         print(hangman_art(lives))
-        print (*hidden_word)
+        print(*hidden_word)
         print(f"\n\nThe word has {len(word)} letters.\n")
         print("Letters guessed: " + ', '.join(guessed_letters) + f"\n")
         print("Words guessed: " + ', '.join(guessed_words) + f"\n")
         guess = input("Guess a letter or word:\n").lower()
-        #code if user guesses a single letter
+# code if user guesses a single letter
         if guess.isalpha() and len(guess) == 1:
             if guess in guessed_letters:
                 message = f"You have already guessed {guess}, try again!"
             elif guess not in word:
                 message = f"{guess} is not in the word"
-                lives -=1
+                lives -= 1
                 guessed_letters.append(guess)
             else:
-                # Replacing underscores with correct letters inspired by 
+                # Replacing underscores with correct letters inspired by
                 # https://www.youtube.com/watch?v=DLurhc1i5_4&ab_channel=MikhaHarly
                 message = f"""{guess} is in the word! Good Job!"""
                 guessed_letters.append(guess)
-                for position in range (len(word)):
+                for position in range(len(word)):
                     letter = word[position]
                     if letter == guess:
                         hidden_word[position] = letter
@@ -145,22 +144,23 @@ def play_game(word, lives):
                 message = f"You have already guessed {guess}, try again!"
             elif guess != word:
                 print(f"{guess} is not the word!")
-                lives -=1
+                lives -= 1
                 guessed_words.append(guess)
             else:
                 hidden_word = guess
         # Code to catch invalid input
-        elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):	
-            message = f"Either guess 1 letter or a word with {len(word)} characters"	
-        else:	
+        elif guess.isalpha() and (len(guess) != 1 and len(guess) != len(word)):
+            message = (f'Either guess 1 letter or a '
+                       f'word with {len(word)} characters')
+        else:
             message = "Invalid input, try again!"
 
 
 def restart_game():
     """
-    Asks the player if they want to play again or quit. 
+    Asks the player if they want to play again or quit.
     If they want to play again they are taken back to the
-    welcome menu. If they choose to quit, the program ends. 
+    welcome menu. If they choose to quit, the program ends.
     """
     print("Would you like to play again or turn off the game?\n")
     options = ["Play again", "Quit"]
@@ -169,9 +169,9 @@ def restart_game():
     if menu_entry_index is None:
         restart_game()
     if options[menu_entry_index] == "Play again":
-            main()
+        main()
     elif options[menu_entry_index] == "Quit":
-            print("Goodbye!")
+        print("Goodbye!")
     else:
         print("An error occured, please try again.")
 
@@ -208,5 +208,6 @@ def game_rules():
         main()
     else:
         print("An unexpected error occured, please try again.")
-    
+
+
 main()
